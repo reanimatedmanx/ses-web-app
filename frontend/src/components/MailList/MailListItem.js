@@ -28,14 +28,14 @@ export function MailListItem({ mail }) {
         <Box display="flex" justifyContent="space-between" width="100%">
           <Box>
           <ListItemText
-            primary={<Typography component="h5" fontWeight={600}>{mail.from}</Typography>}
+            primary={<Typography component="h5" fontWeight={600}>{mail.from_name}</Typography>}
             secondary={
                 <Typography
                   component="span"
                   variant="body"
                   sx={{ color: 'text.primary' }}
                 >
-                  {mail.subject}
+                  {mail.subject_preview}
                 </Typography>
             }
           />
@@ -44,7 +44,7 @@ export function MailListItem({ mail }) {
               component="span"
               variant="body2"
               sx={{ color: 'text.secondary' }}
-            >{mail.body}</Typography>}
+            >{mail.body_preview}</Typography>}
           />
           </Box>
           <Box>
