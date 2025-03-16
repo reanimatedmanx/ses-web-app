@@ -5,6 +5,7 @@
 exports.up = function (knex) {
     return knex.schema.createTable('emails', table => {
         table.increments('id').primary();
+        table.text('from');
         table.text('to');
         table.text('cc');
         table.text('bcc');
