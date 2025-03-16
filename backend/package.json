@@ -13,7 +13,10 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "migrate": "knex migrate:latest",
+    "db:migrate:make": "knex migrate:make",
+    "db:migrate": "knex migrate:latest",
+    "db:rollback": "knex migrate:rollback",
+    "db:rollback:all": "knex migrate:rollback --all",
     "start": "node index.js",
     "dev": "cross-env PORT=3001 nodemon index.js"
   },
