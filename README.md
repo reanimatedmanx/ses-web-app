@@ -47,8 +47,9 @@ This is a monorepo. It has two folders:
 
 1. `cd backend` - Go to the backend folder
 2. `yarn install` - Install the dependencies
-3. `yarn migrate` - Run the knex db migrations
-4. `yarn dev` - Start the development server (<http://localhost:3001>)
+3. `yarn db:migrate` - Run the db migrations
+4. `yarn db:seed` - Run the db seeds
+5. `yarn dev` - Start the development server (<http://localhost:3001>)
 
 ### Frontend
 

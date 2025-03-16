@@ -7,6 +7,8 @@ export default {
     migrations: {
       directory: './migrations'
     },
+    seeds: { directory: './seeds' },
     useNullAsDefault: true
-  }
+  },
+  production: {},
 };
