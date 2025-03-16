@@ -42,7 +42,7 @@ function Emails() {
   })
 
   if (error) return <div>Failed to load</div>
-  if (!data?.items.length) return <div>...</div>
+  if (!data?.items?.length) return <div>...</div>
 
   return <MailList inboxItems={data.items} isLoading/>
 }
@@ -54,7 +54,8 @@ function EmailDetails({ id }) {
 
   return (
     <Container>
-      <Card variant="outlined" sx={{ height: '100%'}}>
+      {/* TODO: Beautify this calc, extract to a separate component, extract `42` magic number to const (top, bottom padding + 1px border on each side.) */}
+      <Card variant="outlined" sx={{ height: 'calc(100vh - 42px)', maxHeight: "100%", overflowY: 'scroll'}}>
         <CardContent>
           <Typography gutterBottom fontSize={24}>
             {data.subject}

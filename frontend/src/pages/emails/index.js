@@ -30,7 +30,7 @@ function Emails() {
 
     if (isLoading) return <code>...</code>
     if (error) return <code>Failed to load</code>
-    if (!data?.items.length) return <div>No emails yet</div>
+    if (!data?.items?.length) return <div>No emails yet</div>
 
     return (
       <Box display="flex">
