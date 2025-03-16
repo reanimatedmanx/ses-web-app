@@ -14,9 +14,7 @@ export default function App({ Component, pageProps }) {
       </Head>
       <main>
         <Sidebar/>
-        <Container>
           <Component {...pageProps} />
-        </Container>
       </main>
     </>
   );
