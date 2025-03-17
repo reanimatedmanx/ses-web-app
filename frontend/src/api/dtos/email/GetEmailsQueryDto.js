@@ -1,12 +1,11 @@
-import { PaginationDto } from '../PaginationDto';
+import { PaginationDto } from '../PaginationDto'
 
 export class GetEmailsQueryDto extends PaginationDto {
+	query = ''
 
-    query = ''
+	constructor(params) {
+		super(params.page, params.pageSize)
 
-    constructor(params) {
-        super(params.page, params.pageSize)
-
-        this.query = params.query
-    }
+		this.query = params.query
+	}
 }
