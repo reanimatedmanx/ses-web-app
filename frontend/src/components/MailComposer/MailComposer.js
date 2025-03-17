@@ -78,8 +78,10 @@ export function MailComposer({ isOpened, onClose }) {
 				</Paper>
 			</Box>
 			<Box sx={{ p: 2 }} gap={2} display="flex">
-				<Button type="submit" variant='contained'>Send</Button>
-				<Button onClick={() => { }}>Cancel</Button>
+				<Button type="submit" variant="contained">
+					Send
+				</Button>
+				<Button onClick={() => {}}>Cancel</Button>
 			</Box>
 		</Drawer>
 	)

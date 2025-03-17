@@ -8,10 +8,7 @@ import styles from './Sidebar.module.css'
 
 export const Sidebar = () => {
 	return (
-		<List
-			className={styles.root}
-			component="nav"
-		>
+		<List className={styles.root} component="nav">
 			<ListItemButton as={Link} href="/">
 				<Tooltip title="Home" placement="right-start">
 					<HomeIcon className={styles.icon} />
