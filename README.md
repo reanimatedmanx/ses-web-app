@@ -1,6 +1,15 @@
 # Test Coding Assignment
 
+![promo](https://github.com/user-attachments/assets/56defa35-733b-482e-8010-eef327251bc2)
+
 Develop a simple web app allowing users to send emails. The app should have the following features:  
+
+## Overview
+
+- ⚡ Snappy fetching mechanism via SSR & SWR
+- ✅ Good separation of concerns via `foundations -> components -> views -> pages`
+- 🌼 Added seeds using `fakerjs` and `knex` for better presentation and ample sample data
+- 🪲 A few bugfixes of the initial boilerplate, and code assignment mardkown documentation
 
 ## 1. Sidebar
 
@@ -18,6 +27,8 @@ Develop a simple web app allowing users to send emails. The app should have the 
 ## 3. Sending emails
 
 - [ ] The main page should have a button to compose a new email (placed at the bottom right corner of the screen). The following fields should be present in the compose email form:
+
+`60% - DONE`
 
 * `To`
 * `CC`
