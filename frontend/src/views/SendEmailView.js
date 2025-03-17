@@ -4,6 +4,9 @@ import Fab from '@mui/material/Fab'
 import SendEmailIcon from '@mui/icons-material/SendRounded'
 import { MailComposer } from '@/components'
 
+/**
+ * TODO: Unfinished as of 3/17/2025
+ */
 export function SendEmailView() {
 	// TODO: Add actual virtual scrolling.
 	const [state, setState] = useState({
