@@ -1,14 +1,13 @@
 .root {
     display: flex;
-    cursor: pointer;
     transition: 0.2s all;
 }
 
 .active {
-    background-color: rgba(64, 67, 78, 0.5)
+    background-color: rgba(109, 109, 130, 0.2)
 }
 
 .root:hover {
     padding-left: 20px;
-    background-color: rgba(64, 67, 78, 0.3)
+    background-color: rgba(109, 109, 130, 0.1)
 }

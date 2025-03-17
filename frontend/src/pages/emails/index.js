@@ -25,7 +25,6 @@ export async function getServerSideProps() {
 }
 
 export default function EmailsPage({ fallback }) {
-
   return (
     <SWRConfig fallback={{ fallback }}>
       <Box display="flex">
@@ -36,7 +35,6 @@ export default function EmailsPage({ fallback }) {
           </Box>
         </Container>
        <SendEmailView/>
-      
       </Box>
     </SWRConfig>
   )

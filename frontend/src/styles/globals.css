@@ -9,3 +9,9 @@ body {
 main {
     margin-left: 90px;
 }
+
+a {
+    all: unset;
+    cursor: pointer;
+}
+  

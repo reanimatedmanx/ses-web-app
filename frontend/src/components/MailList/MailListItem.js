@@ -16,20 +16,19 @@ export function MailListItem({ mail }) {
   const date = useMemo(() => new Date(mail.created_at).toLocaleDateString('en-US'), [])
 
   return (
-    <ListItem
-      as={Link}
-      href={linkUrl}
-      alignItems="flex-start"
-      className={isActive ? [styles.root, styles.active].join(' ') : styles.root}
+    <Link href={linkUrl}>
+      <ListItem
+        alignItems="flex-start"
+        className={isActive ? [styles.root, styles.active].join(' ') : styles.root}
       >
         <ListItemAvatar>
           <Avatar alt={mail.from} />
         </ListItemAvatar>
         <Box display="flex" justifyContent="space-between" width="100%">
           <Box>
-          <ListItemText
-            primary={<Typography component="h5" fontWeight={600}>{mail.from_name}</Typography>}
-            secondary={
+            <ListItemText
+              primary={<Typography component="h5" fontWeight={600}>{mail.from_name}</Typography>}
+              secondary={
                 <Typography
                   component="span"
                   variant="body"
@@ -37,15 +36,15 @@ export function MailListItem({ mail }) {
                 >
                   {mail.subject_preview}
                 </Typography>
-            }
-          />
-          <ListItemText
-            primary={<Typography
-              component="span"
-              variant="body2"
-              sx={{ color: 'text.secondary' }}
-            >{mail.body_preview}</Typography>}
-          />
+              }
+            />
+            <ListItemText
+              primary={<Typography
+                component="span"
+                variant="body2"
+                sx={{ color: 'text.secondary' }}
+              >{mail.body_preview}</Typography>}
+            />
           </Box>
           <Box>
             <ListItemText
@@ -58,5 +57,6 @@ export function MailListItem({ mail }) {
           </Box>
         </Box>
       </ListItem>
+    </Link>
   );
 }
