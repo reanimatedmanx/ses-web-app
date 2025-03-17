@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography'
 import { Container } from '@/components'
 import { getEmailsCacheKey, getEmails } from '@/api/emailList'
 import { EmailsView } from '@/views/EmailsView'
+import { SendEmailView } from '@/views/SendEmailView'
 
 export async function getServerSideProps() {
   const emailQueryParams = {
@@ -24,6 +25,7 @@ export async function getServerSideProps() {
 }
 
 export default function EmailsPage({ fallback }) {
+
   return (
     <SWRConfig fallback={{ fallback }}>
       <Box display="flex">
@@ -33,6 +35,8 @@ export default function EmailsPage({ fallback }) {
             <Typography>No email selected</Typography>
           </Box>
         </Container>
+       <SendEmailView/>
+      
       </Box>
     </SWRConfig>
   )
