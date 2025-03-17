@@ -1,49 +1,39 @@
 import { SWRConfig, unstable_serialize } from 'swr'
-import { Box } from '@mui/material'
-import { getEmailsCacheKey, getEmails, useEmails } from '@/api/email-list'
-import { MailList } from '@/components'
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
+import { Container } from '@/components'
+import { getEmailsCacheKey, getEmails } from '@/api/emailList'
+import { EmailsView } from '@/views/EmailsView'
 
 export async function getServerSideProps() {
-    const emailQueryParams = {
-      page: 1,
-      pageSize: 100
+  const emailQueryParams = {
+    page: 1,
+    pageSize: 100
+  }
+
+  const emailsKey = unstable_serialize(getEmailsCacheKey(emailQueryParams))
+  const emails = await getEmails(emailQueryParams)
+
+  return {
+    props: {
+      fallback: {
+        [emailsKey]: emails
+      }
     }
-
-    const emailsKey = unstable_serialize(getEmailsCacheKey(emailQueryParams))
-    const emails = await getEmails(emailQueryParams)
-
-    return {
-        props: {
-          fallback: {
-              [emailsKey]: emails
-          }
-        }
-    }
-}
-
-function Emails() {
-    // TODO: Add actual virtual scrolling.
-    const { isLoading, error, data } = useEmails({
-      page: 1,
-      pageSize: 100,
-    })
-
-    if (isLoading) return <code>...</code>
-    if (error) return <code>Failed to load</code>
-    if (!data?.items?.length) return <div>No emails yet</div>
-
-    return (
-      <Box display="flex">
-        <MailList inboxItems={data.items}/>
-        <Box>No selected mail.</Box>
-      </Box>
-    )
+  }
 }
 
 export default function EmailsPage({ fallback }) {
-    return (
-      <SWRConfig fallback={{ fallback }}>
-          <Emails />
-      </SWRConfig>
-    )
+  return (
+    <SWRConfig fallback={{ fallback }}>
+      <Box display="flex">
+        <EmailsView />
+        <Container>
+          <Box display="flex" width="100%" height="100%" justifyContent="center" alignItems="center">
+            <Typography>No email selected</Typography>
+          </Box>
+        </Container>
+      </Box>
+    </SWRConfig>
+  )
 }

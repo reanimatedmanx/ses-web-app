@@ -1,13 +1,21 @@
 .root {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    height: 100vh;
+    align-items: stretch;
+    /* TODO: Extract `56` magic number into css variables */
+    height: 100%;
     width: 100%;
+    min-width: 400px;
     max-width: 400px;
     box-sizing: border-box;
     border-right: 2px solid #e0e0e0;
     background: rgb(22, 23, 27);
     overflow-y: scroll;
+    
+}
+
+.list {
     padding: 0;
+    overflow-y: scroll;
+    height: calc(100vh - 56px);
 }

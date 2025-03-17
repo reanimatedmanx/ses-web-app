@@ -26,5 +26,6 @@ export const getEmails = (queryParams) => fetcher(getEmailsCacheKey(queryParams)
  */
 export const useEmails = (queryParams) => useSWR(
     getEmailsCacheKey(queryParams),
-    fetcher
+    fetcher,
+    { keepPreviousData: true }
 )

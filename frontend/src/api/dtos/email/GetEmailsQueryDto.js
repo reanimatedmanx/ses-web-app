@@ -1,13 +1,12 @@
 import { PaginationDto } from '../PaginationDto';
 
-export class GetEmailsQueryDto {
-    // TODO: Add filters for searching.
-    pagination = new PaginationDto()
+export class GetEmailsQueryDto extends PaginationDto {
 
-    /**
-     * @param {PaginationDto} pagination - Pagination props.
-     */
-    constructor(pagination) {
-        this.pagination = new PaginationDto(pagination.page, pagination.pageSize);
+    query = ''
+
+    constructor(params) {
+        super(params.page, params.pageSize)
+
+        this.query = params.query
     }
 }
